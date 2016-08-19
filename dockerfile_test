@@ -1,0 +1,20 @@
+FROM ubuntu:latest
+MAINTAINER jeffrey <hevei.ho@gmail.com>
+
+
+# proxy setting
+#ENV http_proxy <HTTP_PROXY>
+#ENV https_proxy <HTTPS_PROXY>
+
+# Install the update
+RUN apt-get -y update && apt-get -y upgrade
+
+# Install git/wget/jdk
+RUN apt-get install -y git wget default-jdk
+
+#download spark
+RUN git clone https://github.com/apache/spark.git
+WORKDIR spark
+
+#build spark
+RUN build/mvn -DskipTests clean package
