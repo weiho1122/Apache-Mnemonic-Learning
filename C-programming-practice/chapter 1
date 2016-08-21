@@ -1,0 +1,166 @@
+##############################
+exercise 1.3-1.5
+#include <stdio.h>
+float main()
+{
+    float fahr, celsius;
+    int lower, upper, step;
+    lower = -20;
+    upper = 150;
+    step = 5;
+    
+    celsius = upper;
+    printf("temp conversion celsius to fahr \n");
+    while (celsius >= lower) 
+    {
+        fahr = celsius / (5.0/9.0) +32.0;
+        printf("%6.0f %3.0f\n", celsius ,fahr );
+        celsius = celsius - step;
+    }
+}
+
+#################################
+exercise 1.7 
+#include <stdio.h>
+main()
+{
+    printf("%d", EOF);
+}/*return -1*/
+
+#################################
+exercise 1.8
+#include <stdio.h>
+void main()
+{
+    int c, nb, nt, nl, charcount;
+    charcount=nb=nt=0; nl=1;
+    while ((c=getchar())!=EOF){
+       if (c=='\n')
+       ++nl;
+       else if (c=='\t')
+       ++nt;
+       else if (c==' ')
+       ++nb;
+       ++charcount;
+      }
+    printf("there are %d char entered\n", charcount);
+    printf("there are %d blanks, %d tabs and %d lines entered\n", nb, nt, nl);
+}
+/* 
+' '      space 
+'\t'     horizontal tab 
+'\n'     newline
+'\v'     vertical tab 
+'\f'     feed 
+'\r'     carriage return 
+*/
+
+##################################
+exercise 1.9
+#include <stdio.h>
+void main()
+{
+    int c;
+    while ((c = getchar()) != EOF) {
+    if (c == ' ') {
+        while ((c = getchar()) == ' ');
+        putchar(' ');
+        if (c == EOF) break;
+        }
+    putchar(c);
+    }
+}
+
+###################################
+exercise 1.12
+#include<stdio.h>
+int main() {
+    while ((c = getchar()) != EOF) {
+        if (c == ' ') {
+            putchar('\n');
+        }
+        else {
+            putchar(c);
+        }
+    }
+}
+
+######################################
+exercise 1.13
+#include <stdio.h>
+void main()
+{
+    int c;
+    while ((c = getchar()) != EOF) {
+    if (c == ' ' || c == '\t' || c == '\n') 
+      printf ("\n");
+    else printf ("*");
+    }
+}
+
+########################################
+exercise 1.14
+#include <stdio.h>
+void main()
+{
+    int c, height, i, k;
+    int nchar[]={0};
+    while ((c = getchar()) != EOF){
+        if (c>33 && c<126){
+            ++nchar[c];
+            if (height<=nchar[c]){
+                height=nchar[c];
+            }
+        }
+    }
+    for(i=height; i>0; i--){
+        printf("%4d|");
+        for(k=0;k<=93;k++){
+            if (nchar[k]>i){
+                printf("#");
+            }
+            else{
+                printf(" ");
+            }
+            printf("\n");
+        }
+    }
+    printf("    +");
+    for(i = 0; i <= 93; ++i){
+        printf("-");
+        printf("\n     ");
+    }
+    for(i = 0; i <= 93; ++i){
+        printf("%c", i+33);
+    }
+    printf("\n");
+}
+
+##################################
+exercise 1.15
+#include <stdio.h>
+float celtofahr(float);
+
+float main()
+{
+    float celsius;
+    int lower, upper, step;
+    lower = -20;
+    upper = 150;
+    step = 5;
+
+    celsius = upper;
+    printf("temp conversion celsius to fahr \n");
+    while (celsius >= lower)
+    {
+        printf("%6.0f %3.0f\n", celsius ,celtofahr(celsius));
+        celsius = celsius - step;
+    }
+}
+
+float celtofahr(float celsius)
+{
+    return celsius/(5.0/9.0) +32.0;
+}
+
+##############################
