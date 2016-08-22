@@ -164,3 +164,46 @@ float celtofahr(float celsius)
 }
 
 ##############################
+exercise 1.17
+#include <stdio.h>
+#define MAXLINE 1000
+
+int getline(char line[], int maxline);
+void copyline(char to[], char from[]);
+
+main()
+{
+  int len;
+  char line[MAXLINE], longestline[MAXLINE];
+  while ((len = getline(line, MAXLINE)) > 0){
+      if (len > 80){
+          copyline(longestline, line);
+          printf ("%s", longestline);
+      }
+  }
+  return 0;
+}
+
+int getline(char s[], int lim)
+{
+    int c, i;
+    for(i=0; i<lim-1 && (c=getchar())!=EOF && c!='\n'; ++i){
+        s[i] = c;
+    }
+    if (c == '\n'){
+        s[i] = c;
+        ++i;
+    }
+    s[i]='\0';
+    return i;
+}
+
+void copyline(char to[], char from[])
+{
+    int i=0;
+    while ((to[i] = from [i]) != '\0'){
+        ++i;
+    }
+}
+
+########################################
