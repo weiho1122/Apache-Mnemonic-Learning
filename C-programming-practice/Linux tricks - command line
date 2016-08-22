@@ -1,0 +1,9 @@
+1. Ctrl-Left moves cursor by arg;
+2. Ctrl+U deletes entire line;
+3. Ctrl+R then "nano" allows search recent commands includes "nano";
+4. Tab for autocomplete;
+5. sudo !! adds sudo to last command you run;
+6. if you type 'napa' instead of 'nano', use ^nanp^nano to correct last line;
+7. "history | grep nano" calls out recent command line number includes nano, then ! number to run it again;
+8. use {} to expand arg;
+9. more to add.
