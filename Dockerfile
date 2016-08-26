@@ -36,8 +36,7 @@ RUN cd /ws && git clone https://github.com/apache/incubator-mnemonic.git && \
     cd incubator-mnemonic && source /etc/profile.d/mvn.sh && mvn clean package install
 
 #make a remote repo lined to my forked version
-RUN git remote add origin <https://github.com/weiho1122/incubator-mnemonic.git>
+#RUN cd incubator-mnemonic && git remote add origin https://github.com/weiho1122/incubator-mnemonic.git
 
-#cd incubator-mnemonic &&
 WORKDIR /ws
 CMD ["bash"]
