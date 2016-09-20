@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int maxProduct(vector<string>& words) {
+        int n = words.size();
+        vector<int> element(n, 0);
+        for (int i=0; i<n; i++){
+            for (int j=0; j<words[i].length(); j++){
+                element[i] |= 1 << (words[i][j] - 'a');//for example element[0] of {'abe'} is equal to 10011
+            }
+        }
+        int ans = 0;
+        for (int i=0; i<n; i++){
+            for (int j=0; j<n; j++){
+                if (!(element[i] & element[j]) && (words[i].length() * words[j].length() > ans)){
+                //bitsize comparison return 0 if element[i] and element [j] are different on each every digit
+                ans = words[i].length() * words[j].length() ;
+                }
+            }
+        }
+        return ans;
+    }
+};
