@@ -1,0 +1,42 @@
++ `1.	Select:`
+
+SELECT table.item1 AS item1, table.item2 AS item2
+FROM tablename AS table
+WHERE table.item1=1;
+
+2.	Join 2 tables
+SELECT table1.item1 AS item1, table1.item2 AS item2, table2. Item3 AS Item3
+FROM table1name AS table1
+JOIN table2name AS table2 ON table1.item1 = table2. Item3
+WHERE table1. item1 =value1 AND table2.item4=value2;
+
+3.	Join 3 tables
+SELECT table1.item1 AS item1, table1.item2 AS item2, table2. Item3 AS Item3
+FROM table1name AS table1
+JOIN table2name AS table2 ON table1.item1 =table2.item1
+JOIN table3name AS table3 ON table3.item1=table1.item1AND table2.Item3=table3.Item3;
+
+4.	Left join/right join/inner join/full outter join
+SELECT table1.item1 AS item1, table1.item2 AS item2, table2.item3 AS item3, table3.item4 AS item4
+FROM table1name AS table1
+JOIN table2name AS table2 ON table1.item1 =table2.item1
+LEFT JOIN table3name AS table3 ON table3. item1 table1.item1 AND table2.Item3=table1.Item3;
+
+5.	Group
+SELECT table1.id AS id, MAX(table1.name) AS name , AVG(table2.gpa) AS gpa 
+FROM table1name AS table1
+JOIN table2name AS table2 ON table1.id=table2.id
+LEFT JOIN table3name AS table3 ON table3.id=table1.id AND table2.term<=table1.term
+WHERE table3.id IS NULL
+GROUP BY table1.id
+ORDER BY item2 ASC;
+
+6.	Subquery
+SELECT item1, item2, (
+	SELECT AVG(item3)
+	FROM table2name
+	WHERE item1=table1.item1
+) AS item4
+FROM table1name AS table1
+
+7.	
