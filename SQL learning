@@ -39,4 +39,16 @@ SELECT item1, item2, (
 ) AS item4
 FROM table1name AS table1
 
-7.	
+7.	Like conditions
+WHERE name LIKE ‘D_ _orian%’
+
+website
+1. SQL Quick Reference (http://www.w3schools.com/sql/sql quickref.asp)
+2. MySQL Reference Manuals (http://dev.mysql.com/doc/#manual)
+3. MS SQL Reference (http://msdn.microsoft.com/en-us/library/ms189826(v=sql.90).aspx)
+5.2 Books
+1. SQL Pocket Guide (http://shop.oreilly.com/product/0636920013471.do)
+2. Learning SQL (http://shop.oreilly.com/product/9780596520847.do)
+3. High Performance MySQL (http://shop.oreilly.com/product/0636920022343.do)
+
+
