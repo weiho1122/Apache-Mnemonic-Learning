@@ -1,0 +1,34 @@
+%Git commend: set head, rebase, etc.
+
+% show git log 
+$ git log
+
+% reset head
+% ^ means one before current
+$ git reset --hard HEAD^
+
+% merge two commit to one in rebase
+% assume merge first commit to second
+$git rebase -i HEAD~2
+
+% abort rebase
+$ git rebase --abort
+
+% when your commit is head and only one commit above upstream/master, ready to continue
+
+% show HEAD diff assuming only one commit above upstream/master
+$ git diff HEAD^
+
+% git fetch --all (this is not the same as git fetch -a)
+
+% show branch which commit is not local
+$ git show-branch master upstream/master
+
+% rebase 
+$ git rebase upstream/master
+
+% push to fork
+$ git push origin -f
+$ git push --set-upstream origin master -f
+
+% create pull request, then done at this step
